@@ -52,6 +52,7 @@ paginate: true
 
 
 ```js
+// FRONT
 const htmlVideoElement = document.getElementById('videoElement');
 
 navigator.mediaDevices.getUserMedia({ video: true, audio: false })
@@ -136,6 +137,7 @@ ICE essaye différentes "candidates" de connexion :
 ## Code simplifié : côté émetteur
 
 ```js
+// FRONT
 // Connexion webRTC (peer)
 const peer = new RTCPeerConnection();
 
@@ -162,6 +164,7 @@ socket.send(JSON.stringify({ offer: peer.localDescription }));
 ## Côté récepteur
 
 ```js
+// FRONT
 const peer = new RTCPeerConnection();
 const video = document.getElementById('remote');
 
@@ -192,6 +195,7 @@ ws.send(JSON.stringify({ answer: peer.localDescription }));
 ## RTCDataChannel : données en P2P
 
 ```js
+// FRONT
 const channel = peer.createDataChannel("chat");
 
 channel.onmessage = (e) => console.log("Message reçu:", e.data);
