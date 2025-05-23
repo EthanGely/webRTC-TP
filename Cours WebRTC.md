@@ -52,9 +52,11 @@ paginate: true
 
 
 ```js
+const htmlVideoElement = document.getElementById('videoElement');
+
 navigator.mediaDevices.getUserMedia({ video: true, audio: false })
   .then(stream => {
-    document.querySelector("video").srcObject = stream;
+    videoElement.srcObject = stream;
   });
 ```
 
@@ -76,16 +78,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
 
 ## Schéma : WebRTC Peer-to-Peer
 
-```
-Navigateur A        WebSocket Server        Navigateur B
-    | --------- signaling (SDP, ICE) ---------> |
-    |                                           |
-    | <-------- signaling (SDP, ICE) ---------- |
-    |                                           |
-    | ------------- P2P via ICE --------------> |
-    |               media/data                  |
-
-```
+![bg right w:100%](WebRTC-explained.png)
 
 ---
 
