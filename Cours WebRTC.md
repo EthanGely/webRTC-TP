@@ -239,6 +239,9 @@ channel.send("Hello peer!");
 - Affichage de la vidéo distante
 - Gestion d'un chat
 
+Cloner le répo suivant :
+https://github.com/EthanGely/webRTC-TP
+
 ---
 
 ## Évaluation
